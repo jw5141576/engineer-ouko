@@ -1964,160 +1964,250 @@ ol {
 }
 
 /* =========================================
-   SERVICES
+   SERVICES SECTION
 ========================================= */
 
 .services-section {
     padding: var(--section-spacing, 80px) 6%;
     background: var(--color-primary, #0B1120);
     color: var(--color-text, #F8FAFC);
-
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 28px;
-    align-items: stretch;
 }
 
-/* Keep the section heading prominent */
-.services-section > .container:first-child {
-    grid-column: 1 / -1;
+.services-header {
+    max-width: 740px;
+    margin: 0 auto 55px;
     text-align: center;
-    margin-bottom: 12px;
-    padding: 0;
-    background: none;
-    border: 0;
-    box-shadow: none;
 }
 
-.services-section > .container:first-child h2 {
-    margin-bottom: 12px;
+.services-header h2 {
+    margin-bottom: 14px;
     color: var(--color-text, #F8FAFC);
     font-size: clamp(2rem, 4vw, 2.8rem);
 }
 
-.services-section > .container:first-child h2::after {
+.services-header h2::after {
     content: "";
     display: block;
     width: 65px;
     height: 4px;
-    margin: 12px auto 0;
+    margin: 14px auto 0;
     border-radius: 4px;
     background: var(--color-accent, #38BDF8);
 }
 
-/* Each existing service container becomes a card */
-.services-section > .container {
-    padding: 28px;
+.services-header p {
+    margin: 0;
+    color: #94A3B8;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+/* 3-Column Responsive Grid */
+.services-grid {
+    width: 100%;
+    max-width: var(--container-width, 1200px);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    align-items: stretch;
+}
+
+/* Service Card */
+.service-card {
+    display: flex;
+    flex-direction: column;
+    padding: 28px 26px;
     background: var(--color-card, #1E293B);
     border: 1px solid var(--color-border, #334155);
     border-radius: var(--radius-large, 20px);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
-
     transition:
         transform var(--transition, 0.3s ease),
         border-color var(--transition, 0.3s ease),
         box-shadow var(--transition, 0.3s ease);
 }
 
-/* Service titles */
-.services-section > .container:not(:first-child) > h3 {
+.service-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--color-accent, #38BDF8);
+    box-shadow: 0 18px 38px rgba(56, 189, 248, 0.12);
+}
+
+/* Highlighted Flagship Card */
+.service-card.service-featured {
+    border-color: rgba(56, 189, 248, 0.65);
+    background: linear-gradient(160deg, #1E293B 65%, rgba(56, 189, 248, 0.08));
+}
+
+/* Top Metadata Row (Tag + Price) */
+.service-card-top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
     margin-bottom: 18px;
+}
+
+.service-tag,
+.service-badge {
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.service-tag {
+    background: #0B1120;
+    border: 1px solid #334155;
+    color: #94A3B8;
+}
+
+.service-badge {
+    background: rgba(56, 189, 248, 0.15);
+    border: 1px solid rgba(56, 189, 248, 0.45);
     color: var(--color-accent, #38BDF8);
-    font-size: 1.35rem;
-    font-weight: 700;
 }
 
-/* Existing service images */
-.services-section > .container img {
-    width: 100%;
-    height: 210px;
-    object-fit: cover;
-    border-radius: var(--radius-medium, 14px);
-    margin-bottom: 20px;
+.service-price {
+    color: var(--color-success, #34D399);
+    font-size: 0.88rem;
+    font-weight: 800;
 }
 
-/* Existing service descriptions */
-.services-section > .container > p:last-child {
+.service-card h3 {
+    margin-bottom: 12px;
+    color: var(--color-text, #F8FAFC);
+    font-size: 1.25rem;
+    line-height: 1.35;
+}
+
+.service-problem {
+    margin-bottom: 18px;
+    color: #94A3B8;
+    font-size: 0.92rem;
+    line-height: 1.75;
+}
+
+/* Deliverables List */
+.service-deliverables {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 24px;
+    padding-top: 16px;
+    border-top: 1px solid #334155;
+}
+
+.service-deliverables li {
+    position: relative;
+    padding-left: 18px;
     color: var(--color-muted, #CBD5E1);
+    font-size: 0.88rem;
+    line-height: 1.65;
+}
+
+.service-deliverables li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--color-accent, #38BDF8);
+    font-weight: 800;
+}
+
+.service-deliverables strong {
+    color: var(--color-text, #F8FAFC);
+}
+
+/* Card CTA Button */
+.service-cta {
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #334155;
+    border-radius: var(--radius-small, 8px);
+    background: #0B1120;
+    color: var(--color-accent, #38BDF8);
+    font-size: 0.9rem;
+    font-weight: 700;
+    transition: all var(--transition, 0.3s ease);
+}
+
+.service-cta:hover,
+.service-featured .service-cta {
+    background: var(--color-accent, #38BDF8);
+    border-color: var(--color-accent, #38BDF8);
+    color: #0B1120;
+}
+
+.service-featured .service-cta:hover {
+    background: #7DD3FC;
+    border-color: #7DD3FC;
+}
+
+/* Value-for-Money Banner */
+.services-value-banner {
+    width: 100%;
+    max-width: var(--container-width, 1200px);
+    margin: 40px auto 0;
+    padding: 26px 30px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    background: #111827;
+    border: 1px solid #263449;
+    border-radius: var(--radius-medium, 14px);
+}
+
+.value-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.value-item strong {
+    color: var(--color-accent, #38BDF8);
     font-size: 0.98rem;
-    line-height: 1.8;
 }
 
-/* Subtle interaction */
-@media (hover: hover) {
-    .services-section > .container:not(:first-child):hover {
-        transform: translateY(-7px);
-        border-color: var(--color-accent, #38BDF8);
-        box-shadow: 0 18px 38px rgba(56, 189, 248, 0.12);
-    }
+.value-item span {
+    color: #94A3B8;
+    font-size: 0.88rem;
+    line-height: 1.65;
 }
 
-/* Tablets */
-@media (max-width: 900px) {
-    .services-section {
+/* Tablet */
+@media (max-width: 950px) {
+    .services-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 22px;
-    }
-
-    .services-section > .container:first-child {
-        grid-column: 1 / -1;
-    }
-}
-
-/* Mobile phones */
-@media (max-width: 600px) {
-    .services-section {
-        grid-template-columns: 1fr;
-        padding: 55px 5%;
         gap: 20px;
     }
 
-    .services-section > .container:first-child {
-        grid-column: auto;
-    }
-
-    .services-section > .container {
-        padding: 22px;
-    }
-
-    .services-section > .container img {
-        height: 200px;
+    .services-value-banner {
+        grid-template-columns: 1fr;
+        gap: 18px;
     }
 }
 
-/* Services layout correction */
-.services-section {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    align-items: stretch;
-}
-
-.services-section > .container:first-child {
-    grid-column: 1 / -1;
-}
-
-/* Keep the service cards aligned in the same row */
-.services-section > .container:not(:first-child) {
-    width: auto;
-    min-width: 0;
-}
-
-/* Improve description readability */
-.services-section > .container > p:last-child {
-    font-size: 0.9rem;
-    line-height: 1.8;
-}
-
-/* Tablet layout */
-@media (max-width: 900px) {
-    .services-section {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-/* Mobile layout */
+/* Mobile */
 @media (max-width: 600px) {
     .services-section {
+        padding: 55px 5%;
+    }
+
+    .services-grid {
         grid-template-columns: 1fr;
+    }
+
+    .service-card {
+        padding: 22px;
     }
 }
 
@@ -2286,7 +2376,7 @@ ol {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 18px;
     max-width: 850px;
-    margin: 0 auto;
+    margin: 40px auto; /*Added 40px of space above contact -cards*/
     padding: 0;
     list-style: none;
 }
@@ -2485,7 +2575,7 @@ footer p {
 /* Feature 5: Contact Form Styling */
 
 .contact-form-container {
-    width: min(100% - 32px, 720px);
+    width: 850px;
     margin: 40px auto 0;
     padding: 32px;
     background: var(--color-card, #1E293B);

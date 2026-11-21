@@ -1,12 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+<head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jeremy portfolio</title>
+
+    <!-- Browser appearance -->
+    <meta name="theme-color" content="#101010">
+
+    <!-- SEO metadata -->
+    <meta
+        name="description"
+        content="Jeremy Ouko is a software engineer and web developer focused on building responsive, reliable, and impactful digital solutions. Explore his skills, projects, and services."
+    >
+
+    <meta name="author" content="Jeremy Ouko">
+
+        <!-- Social media sharing metadata -->
+    <meta property="og:type" content="website">
+
+    <meta
+        property="og:title"
+        content="Jeremy Ouko | Software Engineer & Web Developer"
+    >
+    <meta
+        property="og:description"
+        content="Explore Jeremy Ouko's software engineering journey, technical skills, projects, and services."
+    >
+
+    <!-- Existing stylesheet retained -->
+    <link rel="stylesheet" href="style.css">
+
+    <title>Jeremy Ouko | Software Engineer &amp; Web Developer</title>
 </head>
+                                                          
 <body>
+
+    <!-- Accessibility: allows keyboard users to skip navigation -->
+    <a class="skip-link" href="#main-content">
+        Skip to main content
+    </a>
+
     <header class="site-header">
         <div class="header-container">
 
@@ -47,7 +80,9 @@
 
     <main id="main-content">
 
-        <section id="home" class="hero section">
+        <section id="home" 
+            class="hero section"
+            aria-labelledby="hero-title">
 
             <div class="hero-container">
                 <div class="hero-content">
@@ -608,56 +643,163 @@
             </div>
         </section>
 
-        <section id="services" class="services-section">
-            <div class="container services-heading">
-                <h2>Services</h2>
-                <p>Practical web and software services focused on building reliable, user-friendly digital
-                  solutions.
-                </p>
-            </div>
+        <!-- =========================================
+     SERVICES SECTION
+========================================= -->
+<section id="services" class="services-section">
+    <div class="container services-header">
+        <span class="section-eyebrow">CODE X SOLUTIONS • SERVICES</span>
+        <h2>Services &amp; Digital Solutions</h2>
+        <p>
+            Outcome-driven software engineering designed to secure customer trust, 
+            speed up mobile performance, and turn visitors into paying clients.
+        </p>
+    </div>
 
-            <div class="container">
-                <h3>Frontend Development</h3>
-                <img
-                    src="./images/Front end development.jfif"
-                    alt="Frontend image"
-                    width="300"
-                >
-                <p> I build responsive, clean, and intuitive user interfaces that bridge the gap between
-                    complex software logic and the everyday user. I focus on translating application
-                    requirements into pixel-perfect layouts that adapt seamlessly to mobile screens out
-                    in the field and corporate desktops alike.
-                </p>
+    <div class="services-grid">
+        <!-- Service 1: Featured (Matches GreenLine Pitch) -->
+        <article class="service-card service-featured">
+            <div class="service-card-top">
+                <span class="service-badge">MOST REQUESTED</span>
+                <span class="service-price">From KES 18,000</span>
             </div>
+            <h3>Website Security &amp; Speed Optimization</h3>
+            <p class="service-problem">
+                Eliminates "Not Secure" browser warnings, broken icons, and slow mobile load 
+                times that cause customers to abandon online bookings and checkouts.
+            </p>
+            <ul class="service-deliverables">
+                <li><strong>SSL/TLS &amp; HTTPS Enforcement:</strong> Removes security warnings and protects customer data.</li>
+                <li><strong>Mobile Speed &amp; Asset Tuning:</strong> Fixes slow fonts and heavy files on mobile data.</li>
+                <li><strong>Zero-Downtime Deployment:</strong> Fixes applied safely without taking your site offline.</li>
+            </ul>
+            <a href="#contacts" class="service-cta" data-service="Website Security & Speed Optimization">
+                Book a Site Audit <span>→</span>
+            </a>
+        </article>
 
-            <div class="container">
-                <h3>Bug Fixing</h3>
-                <img
-                    src="./images/Bug fixing.png"
-                    alt="Bug fixing"
-                    width="300"
-                >
-                <p> I provide rigorous troubleshooting and code refinement services to ensure software
-                    platforms run smoothly, securely, and without disruption. I systematically analyze
-                    error logs, isolate system bottlenecks, and eliminate performance issues across both
-                    frontend codebases and backend configurations.
-                </p>
+        <!-- Service 2 -->
+        <article class="service-card">
+            <div class="service-card-top">
+                <span class="service-tag">WEB DEVELOPMENT</span>
+                <span class="service-price">From KES 25,000</span>
             </div>
+            <h3>Business Websites &amp; Landing Pages</h3>
+            <p class="service-problem">
+                Replaces outdated, desktop-only websites with fast, mobile-first platforms 
+                engineered to convert visitors into leads and customers.
+            </p>
+            <ul class="service-deliverables">
+                <li><strong>Mobile-First Responsive UI:</strong> Seamless layouts across smartphones, tablets, and desktops.</li>
+                <li><strong>Conversion Architecture:</strong> Clear navigation, fast loading, and strategic calls-to-action.</li>
+                <li><strong>SEO-Ready Codebase:</strong> Built with clean, semantic HTML5, CSS3, and JavaScript.</li>
+            </ul>
+            <a href="#contacts" class="service-cta" data-service="Business Website / Landing Page">
+                Start a Project <span>→</span>
+            </a>
+        </article>
 
-            <div class="container">
-                <h3>Database Updates</h3>
-                <img
-                    src="./images/Database update.jfif"
-                    alt="Database image"
-                    width="300"
-                >
-                <p> I manage and optimize relational and non-relational database structures to guarantee
-                     secure, highly accessible data architectures. I execute seamless schema migrations,
-                      write highly optimized queries, and structural adjustments for records like
-                      investment pools, user metrics, and agricultural inventories.
-                </p>
+        <!-- Service 3 -->
+        <article class="service-card">
+            <div class="service-card-top">
+                <span class="service-tag">CUSTOM SOFTWARE</span>
+                <span class="service-price">From KES 45,000</span>
             </div>
-        </section>
+            <h3>Business Management Systems &amp; Dashboards</h3>
+            <p class="service-problem">
+                Replaces messy spreadsheets and manual notebooks with tailored internal tools 
+                for tracking inventory, bookings, sales, or farm operations.
+            </p>
+            <ul class="service-deliverables">
+                <li><strong>Custom Admin Dashboards:</strong> Real-time visibility into stock, revenue, and daily operations.</li>
+                <li><strong>Role-Based Access &amp; Validation:</strong> Prevents data errors and protects sensitive records.</li>
+                <li><strong>Scalable Architecture:</strong> Built to grow alongside your business workflows.</li>
+            </ul>
+            <a href="#contacts" class="service-cta" data-service="Custom Business Management System">
+                Request a Demo <span>→</span>
+            </a>
+        </article>
+
+        <!-- Service 4 -->
+        <article class="service-card">
+            <div class="service-card-top">
+                <span class="service-tag">INTEGRATIONS</span>
+                <span class="service-price">From KES 20,000</span>
+            </div>
+            <h3>Booking &amp; Payment Integrations (M-PESA / APIs)</h3>
+            <p class="service-problem">
+                Lets your business capture bookings and collect payments 24/7 without manual 
+                follow-ups or expensive third-party platform commissions.
+            </p>
+            <ul class="service-deliverables">
+                <li><strong>Payment Gateway Integration:</strong> M-PESA Daraja API, Paystack, and card checkout flows.</li>
+                <li><strong>Automated Confirmations:</strong> Instant email, SMS, or WhatsApp booking notifications.</li>
+                <li><strong>Third-Party API Sync:</strong> Connects maps, CRMs, and external tools cleanly.</li>
+            </ul>
+            <a href="#contacts" class="service-cta" data-service="Booking & Payment Integration">
+                Discuss Integration <span>→</span>
+            </a>
+        </article>
+
+        <!-- Service 5 -->
+        <article class="service-card">
+            <div class="service-card-top">
+                <span class="service-tag">DATA ENGINEERING</span>
+                <span class="service-price">From KES 20,000</span>
+            </div>
+            <h3>Database Design &amp; Optimization</h3>
+            <p class="service-problem">
+                Fixes slow search queries, duplicate records, and vulnerable storage for growing 
+                customer lists, financial records, and inventories.
+            </p>
+            <ul class="service-deliverables">
+                <li><strong>Structured Schema &amp; Migrations:</strong> Clean relational models for accurate reporting.</li>
+                <li><strong>Query Performance Tuning:</strong> Speeds up sluggish dashboards and data lookups.</li>
+                <li><strong>Backup &amp; Integrity Rules:</strong> Protects business data from loss or corruption.</li>
+            </ul>
+            <a href="#contacts" class="service-cta" data-service="Database Design & Optimization">
+                Optimize Your Data <span>→</span>
+            </a>
+        </article>
+
+        <!-- Service 6 -->
+        <article class="service-card">
+            <div class="service-card-top">
+                <span class="service-tag">SUPPORT &amp; CARE</span>
+                <span class="service-price">KES 3,500/fix • 10k/mo</span>
+            </div>
+            <h3>Bug Fixing &amp; Monthly Maintenance</h3>
+            <p class="service-problem">
+                Stops broken forms, layout glitches, and server errors from disrupting your 
+                daily revenue when you don't have an in-house IT team.
+            </p>
+            <ul class="service-deliverables">
+                <li><strong>Root-Cause Diagnostics:</strong> Fast isolation and permanent fixes for frontend/backend bugs.</li>
+                <li><strong>24/7 Uptime &amp; SSL Monitoring:</strong> Proactive alerts and automatic certificate renewals.</li>
+                <li><strong>Weekly Backups &amp; Updates:</strong> Peace of mind with priority monthly support.</li>
+            </ul>
+            <a href="#contacts" class="service-cta" data-service="Bug Fixing / Monthly Maintenance">
+                Get Support <span>→</span>
+            </a>
+        </article>
+    </div>
+
+    <!-- Value-for-Money Guarantee Banner -->
+    <div class="services-value-banner">
+        <div class="value-item">
+            <strong>Transparent Flat Rates</strong>
+            <span>You know the exact project cost upfront—no surprise hourly bills.</span>
+        </div>
+        <div class="value-item">
+            <strong>Built for Business ROI</strong>
+            <span>Every solution is tied to faster checkouts, saved hours, or stronger trust.</span>
+        </div>
+        <div class="value-item">
+            <strong>Before &amp; After Proof</strong>
+            <span>Clear documentation showing exact speed gains and resolved issues.</span>
+        </div>
+    </div>
+</section>
 
         <section id="networks" class="network-section">
             <div class="container">
@@ -780,8 +922,8 @@
     </div>
             <ul>
                 <li>Email
-                    <a href="mailto:kimjerry915@gmail.com">
-                        kimjerry915@gmail.com
+                    <a href="mailto:jw5141576@gmail.com">
+                        jw5141576@gmail.com
                         <span aria-hidden="true">✉</span>
                     </a>
                 </li>
@@ -791,12 +933,7 @@
                         <span aria-hidden="true">☎</span>
                     </a>
                 </li>
-                <li>Mobile
-                    <a href="tel:+254757486388">
-                        +254 757486388
-                        <span aria-hidden="true">☎</span>
-                    </a>
-                </li>
+                
                 <li>
                     <a href="https://www.linkedin.com/m/profile/in/jerry-williams-b72726248">
                         Linkedin
@@ -811,21 +948,34 @@
                 </li>
             </ul>
         </section>
-        <footer>
-            &copy; <span id="copyright-year"></span> Jeremy Ouko. All rights reserved.
-           <img src="https://komarev.com/ghpvc/?username=jw5141576-portfolio&label=Portfolio%20views&color=0e75b6&style=flat" alt="Portfolio Views" />
-    </footer>
+        
     </main>
-    <script src="script.js"></script>
-    <!-- Feature 6: Back-to-Top Button -->
+
+    <footer class="site-footer">
+        <p>
+            &copy;
+            <span id="copyright-year"></span>
+            Engineer Ouko. All rights reserved.
+        </p>
+
+        <img
+            src="https://komarev.com/ghpvc/?username=jw5141576-portfolio&amp;label=Portfolio%20views&amp;color=0e75b6&amp;style=flat"
+            alt="Portfolio view counter"
+            loading="lazy"
+        >
+    </footer>
+
+    <!-- Back-to-top control -->
     <button
-    id="back-to-top"
-    type="button"
-    aria-label="Back to top"
-    title="Back to top"
+        id="back-to-top"
+        type="button"
+        aria-label="Back to top"
+        title="Back to top"
     >
-    ↑
+        <span aria-hidden="true">↑</span>
     </button>
 
+    <script src="script.js"></script>
 </body>
 </html>
+

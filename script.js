@@ -122,10 +122,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Select sections and card classes used by the current markup.
     const revealElements = document.querySelectorAll(
-        "#about, #skills, #education, #projects, " +
-        "#services, #networks, #contacts, " +
-        ".skill-card, .project-card, .services-section > .container"
-    );
+    "#about, #skills, #education, #projects, " +
+    "#services, #networks, #contacts, " +
+    ".skill-card, .project-card, .service-card, .services-value-banner"
+);
+
 
     // Avoid animations for visitors who prefer reduced motion
     if (prefersReducedMotion || !("IntersectionObserver" in window)) {
@@ -200,7 +201,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// Feature 5: Contact Form Validation
+// Feature 5: Contact Form Validation & API Submission
 
 document.addEventListener("DOMContentLoaded", () => {
     const contactForm = document.getElementById("contact-form");
@@ -250,32 +251,101 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (!value) {
             error = "This field is required.";
-        } else if (
-            fieldName === "name" &&
-            value.length < 2
-        ) {
+        } else if (fieldName === "name" && value.length < 2) {
             error = "Please enter at least 2 characters.";
-        } else if (
-            fieldName === "email" &&
-            !field.validity.valid
-        ) {
+        } else if (fieldName === "email" && !field.validity.valid) {
             error = "Please enter a valid email address.";
-        } else if (
-            fieldName === "subject" &&
-            value.length < 3
-        ) {
+        } else if (fieldName === "subject" && value.length < 3) {
             error = "Please enter a subject of at least 3 characters.";
-        } else if (
-            fieldName === "message" &&
-            value.length < 10
-        ) {
+        } else if (fieldName === "message" && value.length < 10) {
             error = "Your message must contain at least 10 characters.";
         }
 
         showFieldError(fieldName, error);
-
         return error === "";
     }
+
+    Object.keys(fields).forEach((fieldName) => {
+        const field = fields[fieldName];
+
+        if (field) {
+            field.addEventListener("blur", () => validateField(fieldName));
+            field.addEventListener("input", () => {
+                if (field.getAttribute("aria-invalid") === "true") {
+                    validateField(fieldName);
+                }
+            });
+        }
+    });
+
+    contactForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        statusMessage.textContent = "";
+        statusMessage.className = "form-status";
+
+        const fieldNames = Object.keys(fields);
+        const invalidFields = fieldNames.filter(
+            (fieldName) => !validateField(fieldName)
+        );
+
+        if (invalidFields.length > 0) {
+            statusMessage.textContent =
+                "Please correct the highlighted fields before continuing.";
+            statusMessage.classList.add("error");
+
+            const firstInvalidField = fields[invalidFields[0]];
+            if (firstInvalidField) {
+                firstInvalidField.focus();
+            }
+            return;
+        }
+
+        // 1. Lock the button so the user doesn't double-click
+        submitButton.disabled = true;
+        submitButton.textContent = "Sending...";
+
+        // 2. Package the form inputs into a JSON object
+        const payload = {
+            name: fields.name.value.trim(),
+            email: fields.email.value.trim(),
+            subject: fields.subject.value.trim(),
+            message: fields.message.value.trim()
+        };
+
+        // 3. Send the JSON data to your Python file at api/contact.py
+        try {
+            const response = await fetch("/api/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(payload)
+            });
+
+            const data = await response.json();
+
+            if (response.ok && data.success) {
+                statusMessage.textContent =
+                    "Message sent! Thank you for reaching out—I will get back to you shortly.";
+                statusMessage.classList.add("success");
+                contactForm.reset();
+            } else {
+                statusMessage.textContent =
+                    data.error || "Could not send message. Please email jw5141576@gmail.com directly.";
+                statusMessage.classList.add("error");
+            }
+        } catch (error) {
+            statusMessage.textContent =
+                "Network error. Please check your connection and try again.";
+            statusMessage.classList.add("error");
+        } finally {
+            submitButton.disabled = false;
+            submitButton.textContent = "Submit Message";
+        }
+    });
+});
+    
 
     // Validate a field when the visitor leaves it
     Object.keys(fields).forEach((fieldName) => {
@@ -375,4 +445,28 @@ document.addEventListener("DOMContentLoaded", () => {
     if (copyrightYear) {
         copyrightYear.textContent = new Date().getFullYear();
     }
+});
+
+// Feature 8: Pre-fill Contact Subject from Service Cards
+
+document.addEventListener("DOMContentLoaded", () => {
+    const serviceButtons = document.querySelectorAll(".service-cta[data-service]");
+    const subjectInput = document.getElementById("contact-subject");
+    const messageInput = document.getElementById("contact-message");
+
+    if (!serviceButtons.length || !subjectInput) {
+        return;
+    }
+
+    serviceButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+            const serviceName = button.dataset.service;
+            subjectInput.value = `Inquiry: ${serviceName}`;
+            subjectInput.dispatchEvent(new Event("input"));
+
+            if (messageInput) {
+                setTimeout(() => messageInput.focus(), 400);
+            }
+        });
+    });
 });

@@ -121,11 +121,12 @@ document.addEventListener("DOMContentLoaded", () => {
         window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     // Select sections and card classes used by the current markup.
-    const revealElements = document.querySelectorAll(
-    "#about, #skills, #education, #projects, " +
-    "#services, #networks, #contacts, " +
-    ".skill-card, .project-card, .service-card, .services-value-banner"
-);
+        const revealElements = document.querySelectorAll(
+        "#about, #skills, #education, #projects, " +
+        "#services, #networks, #contacts, " +
+        ".about-story, .pillar-card, .skill-card, .project-card, .service-card, .services-value-banner"
+    );
+
 
 
     // Avoid animations for visitors who prefer reduced motion

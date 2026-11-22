@@ -173,6 +173,31 @@ ol {
     }
 }
 
+/* Top Consultation Pill Button */
+.skip-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin: 12px 0 12px 6%;
+    padding: 9px 18px;
+    border-radius: 999px;
+    background: var(--color-accent, #38BDF8);
+    color: #0B1120;
+    font-size: 0.88rem;
+    font-weight: 800;
+    text-decoration: none;
+    box-shadow: 0 6px 18px rgba(56, 189, 248, 0.28);
+    transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.skip-link:hover,
+.skip-link:focus {
+    background: #7DD3FC;
+    color: #0B1120;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(56, 189, 248, 0.42);
+}
+
 /* =========================================
    HEADER & BRAND LOGO (HIGH VISIBILITY)
 ========================================= */
@@ -307,7 +332,7 @@ ol {
     max-width: var(--container-width, 1200px);
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
     gap: 48px;
     align-items: center;
 }
@@ -335,16 +360,18 @@ ol {
 }
 
 .hero-content h1 {
-    font-size: clamp(2.2rem, 4.2vw, 3.35rem);
+    font-size: clamp(1.85rem, 6.5vw, 3.35rem); 
     font-weight: 900;
-    line-height: 1.15;
+    line-height: 1.18;
     margin-bottom: 20px;
     color: #F8FAFC;
+    overflow-wrap: break-word;
 }
 
 .text-gradient {
     background: linear-gradient(90deg, #38BDF8, #34D399);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -590,7 +617,24 @@ ol {
    6. TABLET & MOBILE NAVIGATION
 ========================================= */
 
-@media (max-width: 1100px) {
+@media (max-width: 600px) {
+    .her0-section {
+        padding: 45px 5% 60px;
+    }
+
+    .hero-actions{
+        flex-direction: column;
+    }
+
+    .hero-actions .btn-primary,
+    .hero-actions .btn-secondary {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .metric-divider {
+        display: none;
+    }
 
     .header-container {
         min-height: 80px;

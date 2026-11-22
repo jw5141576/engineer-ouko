@@ -45,10 +45,10 @@
 
             <a class="profile-logo" href="#home" aria-label="Jeremy Ouko - Home">
                 <img
-                    src="./images/JK Software Engineer Logo.png"
-                    alt="Jeremy Ouko Software Engineer Logo"
-                    width="400"
-                    height="400"
+                    src="./images/image_35adf247.jpg"
+                    alt="Code X Logo Image"
+                    width="600"
+                    height="600"
                 >
             </a>
 
@@ -509,143 +509,224 @@
             </div>
         </section>
 
-        <section id="projects" class="projects-section">
-            <div class="projects-container">
-
-                <div class="projects-heading">
-                    <span class="section-eyebrow">MY WORK</span>
-                    <h2>Featured <span>Projects</span></h2>
-                    <p>
-                        A selection of projects that demonstrate my technical
-                        skills, creativity, and approach to solving problems
-                        through software engineering.
-                    </p>
-                </div>
-
-                <div class="project-filters" role="group" aria-label="Filter projects by category">
-                    <button type="button" class="filter-btn active" data-filter="all" aria-pressed="true">
-                        All Projects
-                    </button>
-                    <button type="button" class="filter-btn" data-filter="web" aria-pressed="false">
-                        Web Development
-                    </button>
-                    <button type="button" class="filter-btn" data-filter="software" aria-pressed="false">
-                        Software Development
-                    </button>
-                </div>
-
-            <div class="projects-grid">
-
-            <article class="project-card" data-category="web">
-                <div class="project-visual project-visual-web">
-                    <span class="project-visual-icon" aria-hidden="true">&lt;/&gt;</span>
-                    <span class="project-visual-label">WEB DEVELOPMENT</span>
-                </div>
-
-                <div class="project-content">
-                    <span class="project-category">01 / WEB APPLICATION</span>
-
-                    <h3>Personal Portfolio Website</h3>
-
-                    <p>
-                        A professional portfolio designed to present my
-                        background, technical skills, projects, and
-                        software engineering journey in one place.
-                    </p>
-
-                    <div class="project-tags">
-                        <span>HTML5</span>
-                        <span>CSS3</span>
-                        <span>JavaScript</span>
-                    </div>
-
-                    <div class="project-actions">
-                        <a href="#contacts" class="project-link">
-                            Request Project Details <span aria-hidden="true">&rarr;</span>
-                        </a>
-                    </div>
-                </div>
-            </article>
-
-            <article class="project-card" data-category="software">
-                <div class="project-visual project-visual-data">
-                    <span class="project-visual-icon" aria-hidden="true">DB</span>
-                    <span class="project-visual-label">DATA &amp; LOGIC</span>
-                </div>
-
-                <div class="project-content">
-                    <span class="project-category">02 / SOFTWARE DEVELOPMENT</span>
-
-                    <h3>Data Management Application</h3>
-
-                    <p>
-                        An opportunity to demonstrate structured data
-                        management, application logic, validation, and
-                        organised information retrieval.
-                    </p>
-
-                    <div class="project-tags">
-                        <span>Programming</span>
-                        <span>SQL</span>
-                        <span>Data Management</span>
-                    </div>
-
-                    <div class="project-actions">
-                        <a href="#contacts" class="project-link">
-                            Discuss This Project <span aria-hidden="true">&rarr;</span>
-                        </a>
-                    </div>
-                </div>
-            </article>
-
-            <article class="project-card" data-category="software">
-                <div class="project-visual project-visual-systems">
-                    <span class="project-visual-icon" aria-hidden="true">{ }</span>
-                    <span class="project-visual-label">DIGITAL SOLUTIONS</span>
-                </div>
-
-                <div class="project-content">
-                    <span class="project-category">03 / APPLICATION DESIGN</span>
-
-                    <h3>Problem-Solving Application</h3>
-
-                    <p>
-                        A software project focused on translating a
-                        practical problem into a structured digital
-                        solution through thoughtful design and logic.
-                    </p>
-
-                    <div class="project-tags">
-                        <span>Problem Solving</span>
-                        <span>UI Design</span>
-                        <span>Development</span>
-                    </div>
-
-                    <div class="project-actions">
-                        <a href="#contacts" class="project-link">
-                            Discuss This Project <span aria-hidden="true">&rarr;</span>
-                        </a>
-                    </div>
-                </div>
-            </article>
-            </div>
-
-            <div class="projects-footer">
-                <p>
-                    Have a project idea or an interesting challenge?
-                    Let's connect and explore the possibilities.
-                </p>
-
-                <a href="#contacts" class="projects-contact-button">
-                    Let's Work Together <span aria-hidden="true">&rarr;</span>
-                </a>
-            </div>
-            </div>
-        </section>
 
         <!-- =========================================
-     SERVICES SECTION
+     PROJECTS SECTION
 ========================================= -->
+<section id="projects" class="projects-section">
+    <div class="container projects-header">
+        <span class="section-eyebrow">PORTFOLIO &amp; CASE STUDIES</span>
+        <h2>Featured Engineering Projects</h2>
+        <p>
+            Real-world web platforms, agribusiness ecosystems, and brand experiences built 
+            with clean architecture, responsive UI, and business scalability in mind.
+        </p>
+
+        <!-- Interactive Category Filters -->
+        <div class="project-filters" role="group" aria-label="Filter projects by category">
+            <button type="button" class="filter-btn active" data-filter="all">All Projects (6)</button>
+            <button type="button" class="filter-btn" data-filter="business">Business &amp; Agribusiness</button>
+            <button type="button" class="filter-btn" data-filter="hospitality">Hospitality &amp; Commerce</button>
+            <button type="button" class="filter-btn" data-filter="brand">Portfolios &amp; Brand</button>
+        </div>
+    </div>
+
+    <div class="projects-grid">
+        <!-- Project 1: Prime Grow Farms -->
+        <article class="project-card project-featured" data-category="business">
+            <div class="project-card-top">
+                <span class="project-badge">AGRIBUSINESS PLATFORM</span>
+                <span class="project-status status-live">Live</span>
+            </div>
+            <h3>Prime Grow Farms Ltd</h3>
+            <p class="project-summary">
+                A next-generation agribusiness platform engineered to streamline food production 
+                and connect local Kenyan farmers directly to reliable market access.
+            </p>
+            <ul class="project-highlights">
+                <li>Direct farm-to-market supply chain showcase</li>
+                <li>Mobile-responsive product &amp; produce catalog</li>
+                <li>Built for sustainable agricultural growth</li>
+            </ul>
+            <div class="project-tech">
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>JavaScript</span>
+                <span>AgriTech</span>
+            </div>
+            <div class="project-links">
+                <!-- Replace # with your live Vercel URL when ready -->
+                <a href="https://prime-grow-farms.vercel.app/#" class="project-btn btn-live" target="_blank" rel="noopener noreferrer" aria-disabled="true">
+                    Live Site <span>↗</span>
+                </a>
+                <a href="https://github.com/jw5141576/prime-grow-farms" class="project-btn btn-code" target="_blank" rel="noopener noreferrer">
+                    GitHub Repo <span>&lt;/&gt;</span>
+                </a>
+            </div>
+        </article>
+
+        <!-- Project 2: Dede's Urban Bistro -->
+        <article class="project-card" data-category="hospitality">
+            <div class="project-card-top">
+                <span class="project-tag">HOSPITALITY &amp; CATERING</span>
+                <span class="project-status status-active">In Progress</span>
+            </div>
+            <h3>Dede's Urban Bistro</h3>
+            <p class="project-summary">
+                Official frontend web platform for a modern urban eatery, featuring an interactive 
+                culinary menu, dine-in experience, and specialized outdoor catering management.
+            </p>
+            <ul class="project-highlights">
+                <li>Modern responsive UI with smooth menu animations</li>
+                <li>Dedicated indoor &amp; outdoor event catering flows</li>
+                <li>Sustainable local sourcing storytelling</li>
+            </ul>
+            <div class="project-tech">
+                <span>HTML5</span>
+                <span>CSS3 Animations</span>
+                <span>Responsive UI</span>
+            </div>
+            <div class="project-links">
+                <a href="#" class="project-btn btn-live" target="_blank" rel="noopener noreferrer" aria-disabled="true">
+                    Live Preview <span>↗</span>
+                </a>
+                <a href="https://github.com/jw5141576/dedes-urban-bistro" class="project-btn btn-code" target="_blank" rel="noopener noreferrer">
+                    GitHub Repo <span>&lt;/&gt;</span>
+                </a>
+            </div>
+        </article>
+
+        <!-- Project 3: Mercy Samaki -->
+        <article class="project-card" data-category="hospitality">
+            <div class="project-card-top">
+                <span class="project-tag">LOCAL COMMERCE &amp; FOOD</span>
+                <span class="project-status status-active">In Progress</span>
+            </div>
+            <h3>Mercy Samaki</h3>
+            <p class="project-summary">
+                A digital storefront and ordering presence built for fresh fish supply and culinary 
+                service, making it easy for local customers to browse stock and place orders.
+            </p>
+            <ul class="project-highlights">
+                <li>Clean, mobile-first product presentation</li>
+                <li>Fast direct-to-customer inquiry &amp; ordering flow</li>
+                <li>Optimized for quick loading on mobile data</li>
+            </ul>
+            <div class="project-tech">
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>JavaScript</span>
+            </div>
+            <div class="project-links">
+                <a href="#" class="project-btn btn-live" target="_blank" rel="noopener noreferrer" aria-disabled="true">
+                    Live Preview <span>↗</span>
+                </a>
+                <a href="https://github.com/jw5141576/mercy-samaki" class="project-btn btn-code" target="_blank" rel="noopener noreferrer">
+                    GitHub Repo <span>&lt;/&gt;</span>
+                </a>
+            </div>
+        </article>
+
+        <!-- Project 4: Founders -->
+        <article class="project-card" data-category="business">
+            <div class="project-card-top">
+                <span class="project-tag">STARTUP &amp; VENTURES</span>
+                <span class="project-status status-active">In Progress</span>
+            </div>
+            <h3>Founders Platform</h3>
+            <p class="project-summary">
+                A dedicated web hub designed for startup builders, strategic partnerships, and 
+                entrepreneurial collaboration—connecting ideas with execution.
+            </p>
+            <ul class="project-highlights">
+                <li>Structured venture &amp; partnership showcase</li>
+                <li>Clean, executive-ready layout and typography</li>
+                <li>Scalable frontend foundation for future tools</li>
+            </ul>
+            <div class="project-tech">
+                <span>Web Architecture</span>
+                <span>UI/UX</span>
+                <span>JavaScript</span>
+            </div>
+            <div class="project-links">
+                <a href="#" class="project-btn btn-live" target="_blank" rel="noopener noreferrer" aria-disabled="true">
+                    Live Preview <span>↗</span>
+                </a>
+                <a href="https://github.com/jw5141576/founders" class="project-btn btn-code" target="_blank" rel="noopener noreferrer">
+                    GitHub Repo <span>&lt;/&gt;</span>
+                </a>
+            </div>
+        </article>
+
+        <!-- Project 5: Engineer Ouko Portfolio -->
+        <article class="project-card" data-category="brand">
+            <div class="project-card-top">
+                <span class="project-tag">DEVELOPER PORTFOLIO</span>
+                <span class="project-status status-live">Live</span>
+            </div>
+            <h3>Engineer Ouko Portfolio</h3>
+            <p class="project-summary">
+                Professional engineering portfolio and Code X Solutions showcase highlighting full-stack 
+                skills, technical achievements, and value-based web solutions.
+            </p>
+            <ul class="project-highlights">
+                <li>Custom dark-theme design system &amp; scroll animations</li>
+                <li>Interactive service pricing &amp; quote pre-fill</li>
+                <li>Deployed via CI/CD on Vercel</li>
+            </ul>
+            <div class="project-tech">
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>JavaScript</span>
+                <span>Vercel</span>
+            </div>
+            <div class="project-links">
+                <a href="#https://engineer-ouko.vercel.app/" class="project-btn btn-live" target="_blank" rel="noopener noreferrer">
+                    Live Site <span>↗</span>
+                </a>
+                <a href="https://github.com/jw5141576/engineer-ouko" class="project-btn btn-code" target="_blank" rel="noopener noreferrer">
+                    GitHub Repo <span>&lt;/&gt;</span>
+                </a>
+            </div>
+        </article>
+
+        <!-- Project 6: Jeremy Biography -->
+        <article class="project-card" data-category="brand">
+            <div class="project-card-top">
+                <span class="project-tag">DIGITAL ARCHIVE</span>
+                <span class="project-status status-active">Living Project</span>
+            </div>
+            <h3>Jeremy Biography &amp; Time Capsule</h3>
+            <p class="project-summary">
+                A living digital archive dedicated to documenting life history, key milestones, 
+                personal philosophy, and a long-term professional journey.
+            </p>
+            <ul class="project-highlights">
+                <li>Chronological milestone &amp; storytelling layout</li>
+                <li>Distraction-free reading typography</li>
+                <li>Continuously updated personal archive</li>
+            </ul>
+            <div class="project-tech">
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>JavaScript</span>
+            </div>
+
+            <div class="project-links">
+                <a href="#" class="project-btn btn-live" target="_blank" rel="noopener noreferrer" aria-disabled="true">
+                    Live Preview <span>↗</span>
+                </a>
+                <a href="https://github.com" class="project-btn btn-code" target="_blank" rel="noopener noreferrer">
+                    GitHub Repo <span>&lt;/&gt;</span>
+                </a>
+            </div>
+        </article>
+    </div>
+</section>
+
+        <!-- =========================================
+            SERVICES SECTION
+        ========================================= -->
 <section id="services" class="services-section">
     <div class="container services-header">
         <span class="section-eyebrow">CODE X SOLUTIONS • SERVICES</span>

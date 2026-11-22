@@ -40,145 +40,131 @@
         Skip to main content
     </a>
 
-    <header class="site-header">
-        <div class="header-container">
 
-            <a class="profile-logo" href="#home" aria-label="Jeremy Ouko - Home">
-                <img
-                    src="./images/image_35adf247.jpg"
-                    alt="Code X Logo Image"
-                    width="600"
-                    height="600"
-                >
+    <!-- =========================================
+     HEADER & NAVIGATION
+    ========================================= -->
+    <header class="site-header">
+        <nav class="navbar container" aria-label="Primary Navigation">
+            <a href="#home" class="brand-logo" aria-label="Code X Solutions - Jeremy Ouko Home">
+                <img src="images/image_35adf247.jpg" alt="Code X Solutions Logo" class="brand-mark">
+                    <div class="brand-text">
+                    <span class="brand-name">CODE <span>X</span></span>
+                    <span class="brand-sub">SOLUTIONS • ENG. OUKO</span>
+                    </div>
             </a>
 
-            <button
-                class="menu-toggle"
-                id="menu-toggle"
-                type="button"
-                aria-label="Open navigation menu"
-                aria-expanded="false"
-                aria-controls="main-navigation"
-            >
-                ☰
+            <button type="button" class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+            ☰
             </button>
 
-            <nav class="site-nav" id="main-navigation" aria-label="Main navigation">
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Me</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#education">Education</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#networks">Networks</a></li>
-                    <li><a href="#contacts">Contacts</a></li>
-                </ul>
-            </nav>
-        </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#services">Services</a></l>
+                <li><a href="#contacts" class="nav-cta">Hire Me</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <main id="main-content">
+    <!-- =========================================
+         HERO / HOME SECTION
+    ========================================= -->
+    <section id="home" class="hero-section">
+        <div class="container hero-grid">
+            <!-- Left Column: Executive Pitch -->
+            <div class="hero-content">
+                <div class="hero-status-pill">
+                    <span class="status-dot"></span>
+                    <span>Available for Web Audits, Builds &amp; Consulting</span>
+                </div>
 
-        <section id="home" 
-            class="hero section"
-            aria-labelledby="hero-title">
-
-            <div class="hero-container">
-                <div class="hero-content">
-
-                <p class="hero-eyebrow">
-                 <span class="status-dot"></span>
-                    TECH ENTHUSIAST
-                </p>
-
-                <h1 class="hero-title">
-                    Hi, I'm <span class="highlight-text">Jeremy Ouko.</span>
-                    <br>
-                    I Build Digital
-                    <span class="highlight-text">Solutions.</span>
+                <h1>
+                    Hi, I'm Jeremy Ouko.<br>
+                    I Engineer <span class="text-gradient">Secure, High-Converting</span> Web Systems.
                 </h1>
 
-                <h2 class="hero-subtitle">
-                    Software Engineer | Web Developer
-                </h2>
-
-                <p class="hero-text">
-                    I'm a software engineer who's passionate about
-                    building responsive, reliable, and impactful digital
-                    solutions. My journey has taught me to approach challenges
-                    with creativity, resilience, and a commitment to continuous
-                    learning. I turn ideas into practical technology that
-                    solves real-world problems.
+                <p class="hero-subtitle">
+                    Software Engineer &amp; Founder of <strong>Code X Solutions</strong>. Blending technical 
+                    software architecture with Business Administration to build fast websites, custom 
+                    management dashboards, and secure digital platforms that drive real revenue.
                 </p>
+
             <div class="hero-actions">
-
-                <a href="#projects" class="btn btn-primary">
-                    View My Projects
-                    <span aria-hidden="true">&rarr;</span>
-                </a>
-
-                <a href="#contacts" class="btn btn-secondary">
-                    Contact Me
-                </a>
-
+                <a href="#services" class="btn-primary">Explore Services &amp; Rates <span>→</span></a>
+                <a href="#projects" class="btn-secondary">View Case Studies</a>
             </div>
 
-            <div class="hero-highlights">
-
-                <div class="hero-highlight">
-                    <span class="highlight-label">Since 2023</span>
-                    <span class="highlight-number">
-                        Engineering Journey
-                    </span>
+            <!-- Proof Metrics Strip -->
+            <div class="hero-metrics">
+                <div class="metric-item">
+                    <strong>Since 2023</strong>
+                    <span>Engineering &amp; Problem Solving</span>
                 </div>
-
-                <div class="hero-divider"></div>
-
-                <div class="hero-highlight">
-                    <span class="highlight-label">Full - Stack</span>
-                    <span class="highlight-number">
-                        Engineering Focus
-                    </span>
+                <div class="metric-divider"></div>
+                <div class="metric-item">
+                    <strong>Full-Stack</strong>
+                    <span>Web, APIs &amp; SQL Systems</span>
                 </div>
-
-                <div class="hero-divider"></div>
-
-                <div class="hero-highlight">
-                    <span class="highlight-label">Current Major</span>
-                    <span class="highlight-number">
-                        Front - End
-                    </span>
+                <div class="metric-divider"></div>
+                <div class="metric-item">
+                    <strong>Nairobi, KE</strong>
+                    <span>Serving Local &amp; Global Clients</span>
                 </div>
             </div>
-            </div>
+        </div>
 
-            <div class="hero-image">
-                <div class="hero-image-frame">
-
-                    <img
-                     src="./images/jerry.jpeg"
-                        alt="Jeremy Ouko, Software Engineer and Web Developer"
-                        width="500"
-                        height="500"
-                        fetchpriority="high"
-                    >
+        <!-- Right Column: Visual Card + Interactive Code Terminal -->
+        <div class="hero-visual">
+            <div class="hero-card-wrapper">
+                <!-- Profile Portrait + Brand Emblem -->
+                <div class="hero-profile-banner">
+                    <img src="./images/jerry.jpeg" alt="Jeremy Ouko, Software Engineer and Founder of Code X Solutions" class="hero-avatar">
+                    <div class="hero-profile-info">
+                        <h2>Jeremy Ouko</h2>
+                        <p>Software Engineer • Code X Solutions</p>
+                        <span class="verified-badge">✓ Verified Full-Stack Builder</span>
+                    </div>
                 </div>
-                <div class="hero-floating-card">
-                    <span class="floating-card-icon" aria-hidden="true">
-                        &lt;/&gt;
-                    </span>
 
-                    <div class="floating-card-content">
-                        <strong>Building for Impact</strong>
-                        <span>Code. Create. Innovate.</span>
+                <!-- Code Snippet / Value Snapshot -->
+                <div class="hero-terminal" aria-hidden="true">
+                    <div class="terminal-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                        <span class="terminal-title">codex_solutions.py</span>
+                    </div>
+                    <pre class="terminal-body"><code><span class="code-keyword">class</span> <span class="code-class">CodeXSolutions</span>:
+                    <span class="code-keyword">def</span> <span class="code-func">deliver_value</span>(self, business):
+                    security = <span class="code-string">"HTTPS / SSL Hardened"</span>
+                    speed = <span class="code-string">"Mobile-First Optimized"</span>
+                    <span class="code-keyword">return</span> {
+                    <span class="code-string">"trust"</span>: security,
+                    <span class="code-string">"performance"</span>: speed,
+                    <span class="code-string">"roi"</span>: <span class="code-string">"Measurable Growth"</span>
+                    }</code></pre>
+                </div>
+
+                <div class="hero-card-footer">
+                    <span>Core Stack:</span>
+                    <div class="mini-stack">
+                        <span>Python</span>
+                        <span>JavaScript</span>
+                        <span>SQL</span>
+                        <span>HTML/CSS</span>
                     </div>
                 </div>
             </div>
-            </div>
-        </section>
+        </div>
+    </div>
+    </section>
 
-        <section id="about" class="about-section">
+
+    <section id="about" class="about-section">
             <div class="about-container">
 
             <div class="about-heading">

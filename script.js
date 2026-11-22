@@ -158,45 +158,39 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// Feature 4: Project Filtering
+// Feature 4: Project Filtering & Placeholder Link Guard
 
 document.addEventListener("DOMContentLoaded", () => {
-    const filterButtons = document.querySelectorAll(".filter-btn");
-    const projects = document.querySelectorAll(
-        ".project-card[data-category]"
-    );
+    const filterButtons = document.querySelectorAll(".project-filters .filter-btn");
+    const projects = document.querySelectorAll(".projects-grid .project-card[data-category]");
 
-    // Stop if the filter controls or categorized projects are missing
-    if (!filterButtons.length || !projects.length) {
-        return;
+    if (filterButtons.length && projects.length) {
+        filterButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                const selectedFilter = button.dataset.filter;
+
+                filterButtons.forEach((filterButton) => {
+                    const isActive = filterButton === button;
+                    filterButton.classList.toggle("active", isActive);
+                    filterButton.setAttribute("aria-pressed", String(isActive));
+                });
+
+                projects.forEach((project) => {
+                    const matchesFilter =
+                        selectedFilter === "all" ||
+                        project.dataset.category === selectedFilter;
+
+                    project.classList.toggle("is-hidden", !matchesFilter);
+                });
+            });
+        });
     }
 
-    filterButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-            const selectedFilter = button.dataset.filter;
-
-            // Update the selected button
-            filterButtons.forEach((filterButton) => {
-                const isActive = filterButton === button;
-
-                filterButton.classList.toggle("active", isActive);
-                filterButton.setAttribute(
-                    "aria-pressed",
-                    String(isActive)
-                );
-            });
-
-            // Show matching projects
-            projects.forEach((project) => {
-                const matchesFilter =
-                    selectedFilter === "all" ||
-                    project.dataset.category === selectedFilter;
-
-                project.classList.toggle(
-                    "filter-hidden",
-                    !matchesFilter
-                );
-            });
+    // Prevent placeholder live links (href="#") from jumping to top of page
+    document.querySelectorAll('.project-btn[href="#"]').forEach((link) => {
+        link.addEventListener("click", (event) => {
+            event.preventDefault();
+            alert("Live preview deployment coming soon! You can inspect the full source code via the GitHub Repo button.");
         });
     });
 });
@@ -346,57 +340,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
     
-
-    // Validate a field when the visitor leaves it
-    Object.keys(fields).forEach((fieldName) => {
-        const field = fields[fieldName];
-
-        if (field) {
-            field.addEventListener("blur", () => {
-                validateField(fieldName);
-            });
-
-            field.addEventListener("input", () => {
-                if (field.getAttribute("aria-invalid") === "true") {
-                    validateField(fieldName);
-                }
-            });
-        }
-    });
-
-    contactForm.addEventListener("submit", (event) => {
-        event.preventDefault();
-
-        statusMessage.textContent = "";
-        statusMessage.className = "form-status";
-
-        const fieldNames = Object.keys(fields);
-        const invalidFields = fieldNames.filter(
-            (fieldName) => !validateField(fieldName)
-        );
-
-        if (invalidFields.length > 0) {
-            statusMessage.textContent =
-                "Please correct the highlighted fields before continuing.";
-            statusMessage.classList.add("error");
-
-            const firstInvalidField = fields[invalidFields[0]];
-
-            if (firstInvalidField) {
-                firstInvalidField.focus();
-            }
-
-            return;
-        }
-
-        // Validation succeeded, but no message has been sent.
-        statusMessage.textContent =
-            "Validation successful! Your details are ready. Email delivery has not been configured yet.";
-        statusMessage.classList.add("success");
-
-        // No network request is made by this validation-only feature.
-    });
-});
 
 // Feature 6: Back-to-Top Button
 

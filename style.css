@@ -72,6 +72,7 @@ body {
     background-color: var(--color-primary);
 
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 /* =========================================
@@ -215,6 +216,7 @@ ol {
 .navbar {
     max-width: var(--container-width, 1200px);
     margin: 0 auto;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -590,6 +592,12 @@ ol {
         gap: 36px;
     }
 
+    .hero-section,
+    #home {
+        width: 100%;
+        overflow-x: clip;
+    }
+
     .menu-toggle {
         display: block;
     }
@@ -600,6 +608,7 @@ ol {
         top: 100%;
         left: 0;
         right: 0;
+        z-index: 1100;
         flex-direction: column;
         background: #0F172A;
         border-bottom: 1px solid #334155;
@@ -607,7 +616,7 @@ ol {
         gap: 16px;
     }
 
-    .nav-links.open {
+    .nav-links.is-open {
         display: flex;
     }
 }
@@ -618,8 +627,77 @@ ol {
 ========================================= */
 
 @media (max-width: 600px) {
-    .her0-section {
-        padding: 45px 5% 60px;
+    .site-header {
+        padding: 10px 16px;
+    }
+
+    .navbar {
+        width: 100%;
+    }
+
+    .brand-logo {
+        gap: 9px;
+        min-width: 0;
+    }
+
+    .brand-mark {
+        width: 44px;
+        height: 44px;
+    }
+
+    .brand-name {
+        font-size: 1.05rem;
+    }
+
+    .brand-sub {
+        max-width: 180px;
+        font-size: 0.58rem;
+        letter-spacing: 0.8px;
+    }
+
+    .hero-section,
+    #home {
+        padding: 45px 16px 60px;
+    }
+
+    .hero-grid {
+        width: 100%;
+        gap: 30px;
+    }
+
+    .hero-content,
+    .hero-visual,
+    .hero-card-wrapper {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .hero-status-pill {
+        max-width: 100%;
+        font-size: 0.72rem;
+        line-height: 1.35;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(1.75rem, 9vw, 2.25rem);
+    }
+
+    .hero-card-wrapper {
+        padding: 16px;
+    }
+
+    .hero-profile-banner {
+        align-items: flex-start;
+        min-width: 0;
+    }
+
+    .hero-profile-info {
+        min-width: 0;
+    }
+
+    .hero-profile-info h2,
+    .hero-profile-info p {
+        overflow-wrap: anywhere;
     }
 
     .hero-actions{
@@ -719,6 +797,23 @@ ol {
 ========================================= */
 
 @media (max-width: 480px) {
+    .brand-sub {
+        display: none;
+    }
+
+    .hero-profile-banner {
+        gap: 10px;
+    }
+
+    .hero-avatar {
+        width: 58px;
+        height: 58px;
+        flex: 0 0 58px;
+    }
+
+    .verified-badge {
+        font-size: 0.68rem;
+    }
 
     .header-container {
         width: calc(100% - 28px);

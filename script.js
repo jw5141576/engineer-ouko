@@ -31,7 +31,7 @@ if (menuToggle && mainNavigation) {
 
     // Reset the menu when returning to desktop width
     window.addEventListener("resize", () => {
-        if (window.innerWidth > 1100) {
+        if (window.innerWidth > 950) {
             mainNavigation.classList.remove("is-open");
 
             menuToggle.setAttribute("aria-expanded", "false");

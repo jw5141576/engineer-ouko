@@ -1455,7 +1455,7 @@ ol {
     border-radius: 6px;
     background: #0B1120;
     border: 1px solid #334155;
-    color: #94A3B8;
+    color: var(--color-success, #34D399);
     font-size: 0.72rem;
     font-weight: 800;
     letter-spacing: 1px;

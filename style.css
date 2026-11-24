@@ -2547,6 +2547,111 @@ ol {
 }
 
 /* =========================================
+   EXPANDABLE "MORE PROJECTS / SERVICES" DRAWER
+========================================= */
+
+.section-more-wrapper {
+    max-width: var(--container-width, 1200px);
+    margin: 36px auto 0;
+    text-align: center;
+}
+
+.btn-more-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 24px;
+    background: #1E293B;
+    border: 1px solid #334155;
+    border-radius: 999px;
+    color: #F8FAFC;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.btn-more-toggle:hover,
+.btn-more-toggle[aria-expanded="true"] {
+    border-color: var(--color-accent, #38BDF8);
+    color: var(--color-accent, #38BDF8);
+    box-shadow: 0 8px 24px rgba(56, 189, 248, 0.12);
+}
+
+.toggle-icon {
+    font-size: 1.1rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.more-info-drawer {
+    max-width: 760px;
+    margin: 18px auto 0;
+    padding: 22px 26px;
+    background: #0B1120;
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    border-radius: 16px;
+    text-align: left;
+    animation: fadeSlideDown 0.25s ease;
+}
+
+.more-info-drawer[hidden] {
+    display: none;
+}
+
+.more-info-drawer p {
+    margin: 0 0 16px;
+    color: #CBD5E1;
+    font-size: 0.92rem;
+    line-height: 1.7;
+}
+
+.more-info-drawer strong {
+    color: var(--color-accent, #38BDF8);
+}
+
+.drawer-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.drawer-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 9px 16px;
+    border-radius: 8px;
+    background: var(--color-accent, #38BDF8);
+    color: #0B1120;
+    font-size: 0.84rem;
+    font-weight: 800;
+    text-decoration: none;
+    transition: background 0.25s ease;
+}
+
+.drawer-link:hover {
+    background: #7DD3FC;
+}
+
+.drawer-link.secondary {
+    background: #1E293B;
+    border: 1px solid #334155;
+    color: #F8FAFC;
+}
+
+.drawer-link.secondary:hover {
+    border-color: var(--color-accent, #38BDF8);
+    color: var(--color-accent, #38BDF8);
+}
+
+@keyframes fadeSlideDown {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* =========================================
    NETWORKS SECTION
 ========================================= */
 

@@ -322,7 +322,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (response.ok && data.success) {
                 statusMessage.textContent =
-                    "Message sent! Thank you for reaching out—I will get back to you shortly.";
+                    "Message received! Thank you for reaching out. I’ll review your details and get back to you shortly.";
                 statusMessage.classList.add("success");
                 contactForm.reset();
             } else {
@@ -414,3 +414,59 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
+// Expandable "More Projects" & "More Services" Drawers
+[
+    { btnId: "toggle-more-projects", drawerId: "more-projects-drawer" },
+    { btnId: "toggle-more-services", drawerId: "more-services-drawer" }
+].forEach(({ btnId, drawerId }) => {
+    const btn = document.getElementById(btnId);
+    const drawer = document.getElementById(drawerId);
+    if (!btn || !drawer) return;
+
+    btn.addEventListener("click", () => {
+        const isOpen = btn.getAttribute("aria-expanded") === "true";
+        btn.setAttribute("aria-expanded", String(!isOpen));
+        btn.querySelector(".toggle-icon").textContent = isOpen ? "+" : "−";
+        drawer.hidden = isOpen;
+    });
+});
+
+// Hero "Request a Quote" Blank Quote Pre-Fill
+const heroQuoteBtn = document.getElementById("hero-quote-btn");
+if (heroQuoteBtn) {
+    heroQuoteBtn.addEventListener("click", (event) => {
+        event.preventDefault();
+        const contactSection = document.getElementById("contacts");
+        const subjectInput = document.querySelector('#contacts input[name="subject"], #contacts #subject');
+        const messageInput = document.querySelector('#contacts textarea[name="message"], #contacts #message');
+
+        if (subjectInput) {
+            subjectInput.value = "Project Quote Request - Code X Digital";
+        }
+
+        if (messageInput) {
+            messageInput.value =
+`Hello Jeremy,
+
+I would like to request a project quotation from Code X Digital:
+
+• Business / Organization Name: 
+• Website URL (if existing): 
+• Service Needed (e.g., Security & Speed Audit, New Website, Redesign, Custom Dashboard, M-PESA Integration): 
+• Key Goals / Features Required: 
+• Preferred Timeline: 
+• Estimated Budget Range (KES): 
+
+Looking forward to your quote.`;
+        }
+
+        if (contactSection) {
+            contactSection.scrollIntoView({ behavior: "smooth" });
+            if (messageInput) {
+                setTimeout(() => messageInput.focus(), 500);
+            }
+        }
+    });
+}
+
